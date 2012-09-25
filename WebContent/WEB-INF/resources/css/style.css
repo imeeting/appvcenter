@@ -39,3 +39,10 @@ footer span {
 .avc-button {
 	margin: 10px 0;
 }
+
+.app_tbody, .version_tbody {
+	overflow: auto;
+	width: auto;
+	height: 320px;
+}
+

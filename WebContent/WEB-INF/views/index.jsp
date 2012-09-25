@@ -44,8 +44,8 @@
 				}
 			%>
 		</form>
-	<jsp:include page="common/_footer.jsp"></jsp:include>
 	</div>
+	<jsp:include page="common/_footer.jsp"></jsp:include>
 	<script src="/appvcenter/js/lib/jquery-1.8.0.min.js"></script>
 	<script src="/appvcenter/js/lib/bootstrap.min.js"></script>
 </body>

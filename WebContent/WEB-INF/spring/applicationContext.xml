@@ -21,6 +21,9 @@
 	    <property name="systemPwd">
 	        <value>${SystemPwd}</value>
 	    </property>
+	    <property name="serverUrl">
+	        <value>${server_url}</value>
+	    </property>
 	</bean>
 	
 	<bean id="dataSource_mysql_c3p0" 
@@ -71,7 +74,7 @@
 		</property>				 		
 	</bean>	
 	
-	<bean id="version_dao" class="com.richitec.appvcenter.mvc.model.VersionDao">
+	<bean id="app_dao" class="com.richitec.appvcenter.mvc.model.AppDao">
 		<property name="dataSource" ref="dataSource_mysql_c3p0"></property>
 	</bean>
 </beans>

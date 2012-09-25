@@ -8,7 +8,7 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import com.richitec.appvcenter.mvc.model.VersionDao;
+import com.richitec.appvcenter.mvc.model.AppDao;
 
 public class ContextLoader extends ContextLoaderListener {
 
@@ -36,8 +36,8 @@ public class ContextLoader extends ContextLoaderListener {
 		return (Configuration) appContext.getBean("configuration");
 	}
 	
-	public static VersionDao getVersionDao() {
-		return (VersionDao) appContext.getBean("version_dao");
+	public static AppDao getAppDao() {
+		return (AppDao) appContext.getBean("app_dao");
 	}
 
 }
