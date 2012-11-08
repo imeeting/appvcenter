@@ -1,3 +1,4 @@
+<%@page import="com.richitec.appvcenter.framework.ContextLoader"%>
 <%@page import="com.richitec.appvcenter.constants.WebConstants"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.List"%>
@@ -45,13 +46,14 @@
 										String fileName = (String) version.get("client_name");
 										String clientVersion = (String) version.get("version");
 										String updateTime = String.valueOf(version.get("update_time"));
+										String comment = (String) version.get("comment");
 							%>
 							<tr>
 								<td width="22%"><%=type %></td>
 								<td width="26%"><%=fileName %></td>
-								<td width="17%"><%=clientVersion %></td>
+								<td title="<%=comment %>" width="17%"><%=clientVersion %></td>
 								<td width="22%"><%=updateTime %></td>
-								<td width="13%"><a class="" href="#" title="下载"><i class="icon-download"></i></a></td>
+								<td width="13%"><a href="<%=ContextLoader.getConfiguration().getServerUrl() %>/download/<%=fileName %>" title="下载"><i class="icon-download"></i></a></td>
 							</tr>
 							
 							<%

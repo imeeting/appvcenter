@@ -43,6 +43,10 @@
 								<td>文件名</td>
 								<td><input id="file_name_input" name="file_name" type="text" readonly="readonly" /></td>
 							</tr>
+							<tr>
+								<td>备注</td>
+								<td><textarea cols="5" wrap="virtual" name="comment"></textarea></td>
+							</tr>
 						</tbody>
 					</table>
 					<button type="submit" class="btn">保存</button>
@@ -64,7 +68,7 @@
 				if (type == "android") {
 					suffix = "apk";
 				}
-				var fileName = $("#appName").val() + "-" + version + "." + suffix;
+				var fileName = $("#appName").val() + "_" + version + "." + suffix;
 				$("#file_name_input").val(fileName);
 				
 				setTimeout(function() {

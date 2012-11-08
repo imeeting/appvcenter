@@ -64,8 +64,9 @@ public class AppManageController {
 			@RequestParam(value = "app_id") String appId,
 			@RequestParam(value = "type") String type,
 			@RequestParam(value = "version") String version,
-			@RequestParam(value = "file_name") String fileName) {
-		appDao.saveVersion(appId, type, version, fileName);
+			@RequestParam(value = "file_name") String fileName,
+			@RequestParam(value = "comment") String comment) {
+		appDao.saveVersion(appId, type, version, fileName, comment);
 		ModelAndView view = new ModelAndView();
 		view.setViewName("redirect:/appmanage/versionlist");
 		view.addObject("appId", appId);

@@ -30,9 +30,9 @@ public class AppDao {
 	}
 
 	public int saveVersion(String appId, String type, String version,
-			String fileName) {
-		String sql = "INSERT INTO app_version (type, client_name, version, appId) VALUES(?,?,?,?)";
-		return jdbc.update(sql, type, fileName, version, appId);
+			String fileName, String comment) {
+		String sql = "INSERT INTO app_version (type, client_name, version, appId, comment) VALUES(?,?,?,?,?)";
+		return jdbc.update(sql, type, fileName, version, appId, comment);
 	}
 
 	public List<Map<String, Object>> getVersions(String appId) {
@@ -45,8 +45,8 @@ public class AppDao {
 		return jdbc.queryForObject(sql, new Object[] {appId, deviceType}, String.class);
 	}
 	
-	public String getNewestAppVersion(String appId, String deviceType) {
-		String sql = "SELECT version FROM app_version WHERE appId = ? AND type = ? ORDER BY update_time DESC LIMIT 1";
-		return jdbc.queryForObject(sql, new Object[] {appId, deviceType}, String.class);
+	public Map<String, Object> getNewestAppVersion(String appId, String deviceType) {
+		String sql = "SELECT version, comment FROM app_version WHERE appId = ? AND type = ? ORDER BY update_time DESC LIMIT 1";
+		return jdbc.queryForMap(sql, appId, deviceType);
 	}
 }
